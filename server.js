@@ -9,7 +9,7 @@ let image = require("./routes/image");
 
 // connecting the database
 let mongodb_url =
-  "mongodb+srv://kenmoses:Kasee2020@cluster0.qfvfrew.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://ENdunge:1L0v3l1f3@cluster0.q8j5amp.mongodb.net/?retryWrites=true&w=majority";
 let dbName = "darkroom";
 mongoose.connect(
   `${mongodb_url}${dbName}`,
