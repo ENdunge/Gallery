@@ -30,7 +30,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        bat 'heroku rake db:migrate db:seed --app gallery-gal'
+        bat 'curl "https://api.render.com/deploy/srv-cgjd34mbb6mo06m8sv10?key=tkwMojDaN14" --ssl-no-revoke'
       }
     }
   }
