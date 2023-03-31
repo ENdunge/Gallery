@@ -37,11 +37,11 @@ pipeline {
 
   post {
         always{
-            slackSend( channel: "#gallery", token: "slack_webhook token", color: "good", "${custom_msg()}")
+            slackSend( channel: "#gallery", token: "slack_webhook token", color: "good", message: "${custom_msg()}")
         }
 
         // failure{
-        //     slackSend( channel: "#Jenkins", token: "slack_webhook token", color: "good", message: "${custom_failure_msg()}")
+        //     slackSend( channel: "#gallery", token: "slack_webhook token", color: "good", message: "${custom_failure_msg()}")
         // }
 
         failure {
@@ -76,6 +76,6 @@ def custom_msg()
   def JENKINS_URL= "https://gallery-75dr.onrender.com"
   def JOB_NAME = env.JOB_NAME
   def BUILD_ID= env.BUILD_ID
-  def JENKINS_LOG= " SUCCESSFUL: Job [${env.JOB_NAME}] Build Number: ${BUILD_ID} Site URL: ${BUILD_ID}"
+  def JENKINS_LOG= " SUCCESSFUL: Job [${env.JOB_NAME}] Build Number: ${BUILD_ID} Site URL: ${JENKINS_URL}"
   return JENKINS_LOG
 }
