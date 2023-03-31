@@ -23,5 +23,11 @@ pipeline {
         bat 'npm test'
       }
     }
+
+    stage('Deploy') {
+      steps {
+        bat 'heroku rake db:migrate db:seed --app gallery-gal'
+      }
+    }
   }
 }
