@@ -36,6 +36,10 @@ pipeline {
   }
 
   post {
+        always{
+            slackSend( channel: "#gallery", token: "slack_webhook token", color: "good", message: "Email from Jenkinsfile")
+        }
+
         failure {
             emailext body: 'Check console output at $BUILD_URL to view the results. \n\n ${CHANGES} \n\n -------------------------------------------------- \n${BUILD_LOG, maxLines=100, escapeHtml=false}', 
                     to: "${EMAIL_TO}", 
